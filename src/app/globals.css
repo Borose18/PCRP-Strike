@@ -1,0 +1,61 @@
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --bg: #0d0d0d;
+  --surface: #141414;
+  --surface2: #1a1a1a;
+  --border: rgba(255,255,255,0.08);
+  --border2: rgba(255,255,255,0.14);
+  --text: #f0f0f0;
+  --text2: #888;
+  --text3: #555;
+  --gold: #e8a838;
+  --gold-dim: rgba(232,168,56,0.12);
+  --red: #c0392b;
+  --red-dim: rgba(192,57,43,0.15);
+  --orange: #d06b20;
+  --orange-dim: rgba(208,107,32,0.15);
+  --yellow: #d4853a;
+  --yellow-dim: rgba(212,133,58,0.15);
+  --radius: 8px;
+  --radius-lg: 12px;
+}
+
+html, body { height: 100%; background: var(--bg); color: var(--text); font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; font-size: 15px; line-height: 1.5; }
+
+input, textarea, button, select {
+  font-family: inherit;
+  font-size: 14px;
+  outline: none;
+}
+
+input, textarea {
+  background: var(--surface2);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  color: var(--text);
+  padding: 8px 12px;
+  width: 100%;
+  transition: border-color 0.15s;
+}
+input:focus, textarea:focus { border-color: var(--border2); }
+input::placeholder, textarea::placeholder { color: var(--text3); }
+textarea { resize: vertical; min-height: 80px; }
+
+button {
+  cursor: pointer;
+  border: none;
+  border-radius: var(--radius);
+  padding: 9px 16px;
+  font-weight: 500;
+  transition: opacity 0.15s, transform 0.1s;
+}
+button:hover:not(:disabled) { opacity: 0.85; }
+button:active:not(:disabled) { transform: scale(0.98); }
+button:disabled { opacity: 0.3; cursor: not-allowed; }
+
+a { color: var(--gold); text-decoration: none; }
+
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: var(--border2); border-radius: 3px; }
